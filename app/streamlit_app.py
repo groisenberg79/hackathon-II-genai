@@ -20,13 +20,19 @@ def load_data():
 df = load_data()
 
 # Title and intro
-st.title("🤖 Reddit AI Sentiment Analysis")
+st.markdown(
+    "<h1 style='text-align: center;'>🤖 Reddit AI Sentiment Analysis</h1>",
+    unsafe_allow_html=True
+)
 st.markdown(
     """
+    <p style='text-align: center;'>
     This interactive dashboard explores Reddit discussions about AI tools such as ChatGPT.
     It compares sentiment and keyword patterns across multiple subreddits and highlights
     how different online communities talk about artificial intelligence.
-    """
+    </p>
+    """,
+    unsafe_allow_html=True
 )
 
 # -----------------------------
@@ -54,7 +60,7 @@ if df_filtered.empty:
 # -----------------------------
 # Overview metrics
 # -----------------------------
-st.subheader("Overview")
+st.subheader("📌 Overview")
 
 col1, col2, col3 = st.columns(3)
 
@@ -72,7 +78,8 @@ st.markdown(
 # -----------------------------
 # Sentiment distribution
 # -----------------------------
-st.subheader("Sentiment Distribution")
+st.divider()
+st.subheader("📊 Sentiment Distribution")
 st.caption("This chart shows how many comments are classified as negative, neutral, or positive in the selected subreddits.")
 
 sentiment_order = ["negative", "neutral", "positive"]
@@ -95,7 +102,8 @@ st.markdown(
 # -----------------------------
 # Average sentiment by subreddit
 # -----------------------------
-st.subheader("Average Sentiment by Subreddit")
+st.divider()
+st.subheader("📈 Average Sentiment by Subreddit")
 st.caption("Average sentiment scores help compare how optimistic or neutral each subreddit is on average.")
 
 avg_sentiment = (
@@ -132,7 +140,8 @@ st.markdown(
 # -----------------------------
 # Top keywords
 # -----------------------------
-st.subheader("Top Keywords")
+st.divider()
+st.subheader("🔑 Top Keywords")
 st.caption("These are the most frequent keywords found in the filtered comments after stopword removal and text cleaning.")
 
 keyword_text = " ".join(df_filtered["text_keywords"].dropna().astype(str))
@@ -170,7 +179,8 @@ else:
 # -----------------------------
 # Word cloud
 # -----------------------------
-st.subheader("Word Cloud")
+st.divider()
+st.subheader("☁️ Word Cloud")
 st.caption("The word cloud provides a quick visual summary of the most prominent terms in the selected comments.")
 
 if keyword_text.strip():
@@ -191,7 +201,8 @@ else:
 # -----------------------------
 # Example highly positive comments
 # -----------------------------
-st.subheader("Example Highly Positive Comments")
+st.divider()
+st.subheader("💬 Example Highly Positive Comments")
 st.caption("These examples illustrate how users express strong enthusiasm or appreciation when discussing AI tools.")
 
 # Keep only shorter comments so the examples are easier to read in the app
@@ -211,8 +222,8 @@ if not positive_examples.empty:
 else:
     st.info("No short positive comment examples are available for the selected subreddit(s).")
 
-st.markdown("---")
-st.subheader("Key Takeaways")
+st.divider()
+st.subheader("✅ Key Takeaways")
 st.markdown(
     """
     - Reddit discussions about AI are generally more positive or neutral than negative.
