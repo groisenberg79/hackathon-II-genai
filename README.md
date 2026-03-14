@@ -1,8 +1,20 @@
 # Reddit AI Sentiment Analysis
 
+*An interactive Streamlit dashboard exploring sentiment and keyword patterns in Reddit discussions about AI tools.*
+
 This project was developed during a data analytics hackathon. The goal is to explore how Reddit users discuss artificial intelligence tools such as ChatGPT by analyzing sentiment and keywords in Reddit comments.
 
 The project combines **data cleaning, exploratory data analysis (EDA), sentiment analysis, and an interactive dashboard** to highlight patterns in online discussions about AI.
+
+## Dashboard Preview
+
+<p align="center">
+<img src="assets/dashboard_overview.png" width="800">
+</p>
+
+<p align="center">
+<img src="assets/sentiment_chart.png" width="800">
+</p>
 
 ---
 
@@ -129,6 +141,33 @@ The dashboard will open in your browser.
 - Reddit discussions about AI are generally **positive or neutral**.
 - Different communities discuss AI in **different contexts and tones**.
 - Frequent keywords highlight practical uses of AI such as writing, productivity, and search.
+
+---
+
+# Future Improvements
+
+This project was developed within the time constraints of a hackathon. Due to API access limitations during the event, the analysis relies on a static dataset rather than collecting data directly from Reddit. Several improvements could expand the scope and analytical power of the project:
+
+- **Direct Reddit Data Collection**  
+  Integrate the Reddit API (via PRAW or the official Reddit developer platform) to collect comments dynamically instead of relying on a static dataset.
+
+- **Comparison Between AI Models**  
+  Extend the analysis to compare discussions about different AI systems (for example **ChatGPT vs Claude**) across multiple subreddits.
+
+- **Time-Based Analysis**  
+  Add timestamps to the dataset and analyze how sentiment changes over time as new AI models are released.
+
+- **Topic Modeling**  
+  Apply techniques such as LDA or BERTopic to automatically detect major themes in AI discussions.
+
+- **More Advanced Dashboards**  
+  Expand the Streamlit app with:
+  - sentiment filters
+  - comment search
+  - subreddit comparison views
+
+- **Deployment**  
+  Deploy the dashboard online (for example using Streamlit Cloud) so that users can explore the analysis interactively.
 
 ---
 
